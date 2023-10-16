@@ -1,0 +1,1249 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+}
+button {
+  cursor: pointer;
+}
+.content {
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+.hero {
+  background-color: #e7f2fc;
+  min-height: 714px;
+}
+.coll {
+  color: #38aa34;
+}
+.hero_flex {
+  height: 714px;
+  padding-top: 8.5rem;
+}
+.hero_flex h1 {
+  position: relative;
+  color: #092c4c;
+  font-family: Manrope;
+  font-size: clamp(5rem, 400vw, 2rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 103.6%;
+  z-index: 2;
+  max-width: 65.0625rem;
+}
+.hero_flex::before {
+  content: url(/lp/hero-img.png);
+  position: absolute;
+  top: 110px;
+  left: 60%;
+  z-index: 1;
+  size: 33rem;
+}
+.pointer {
+  position: relative;
+  left: 1.8rem;
+  top: 6px;
+}
+.trust {
+  background-color: #fafafa;
+  margin-top: -20rem;
+}
+.trust_flex {
+  display: flex;
+  align-items: center;
+}
+
+.hero_search {
+  position: relative;
+  z-index: 2;
+  margin-top: 5rem;
+}
+.search_flex {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid #384766;
+  background: transparent;
+  width: 70%;
+}
+#worker {
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  width: 65%;
+}
+#location {
+  width: 88%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.marker {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  background-color: #fff;
+  height: 100%;
+  width: 35%;
+  display: flex;
+}
+.marker::before {
+  content: url(/lp/pin.png);
+  position: relative;
+  z-index: 13;
+  bottom: -5px;
+  right: -15px;
+}
+.search_box {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  gap: 1.7rem;
+}
+.search_flex select {
+  border: none;
+  color: #384766;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  line-height: normal;
+}
+select {
+  background-color: #fff;
+}
+
+input[type="submit"] {
+  border: none;
+  background-color: #384766;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.2rem 3.48rem;
+}
+
+.trust_flex p {
+  color: #092c4c;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.product {
+  display: flex;
+  gap: 2rem;
+  margin-left: 2rem;
+}
+
+/* ----------------- SWIPER STYLE ----------------- */
+.swiper-slide {
+  display: flex !important;
+  padding: 1rem;
+  row-gap: 0.5rem;
+  flex-direction: column;
+  background-color: #2a3f61;
+  border-radius: 0.5rem;
+  width: 18rem !important;
+}
+.swiper-slide img {
+  width: 100%;
+  height: 20rem;
+}
+.swiper-slide .text,
+.trusted {
+  display: flex;
+  justify-content: space-between;
+}
+.swiper-slide h6 {
+  color: #fff;
+  font-family: Manrope;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.swiper-slide .text p,
+.align {
+  color: #fff;
+  font-family: Manrope;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+.shield {
+  color: #f87615;
+}
+.trusted {
+  color: #fff;
+}
+.col {
+  color: #ffc727;
+}
+.swiper-slide p {
+  color: #fff;
+  font-family: Manrope;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.top .content h2 {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 2.75rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-bottom: 3rem;
+}
+.top {
+  margin: 6rem 1rem 6rem 1rem;
+}
+/* ----------- Business/Join Section --------- */
+.business,
+.join {
+  width: 100%;
+  background-color: #2a3f61;
+}
+.business_content,
+.join_content {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  min-height: 38rem;
+  justify-content: center;
+}
+.bus_text,
+.join_text {
+  /* margin: 0 auto; */
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.bus,
+.firststep {
+  width: calc(50% - 10px);
+}
+.bus_text {
+  width: 50%;
+}
+.text_content {
+  width: 41rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.text_content h3 {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: Manrope;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.text_content h2 {
+  color: #fff;
+  font-family: Manrope;
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.text_content p {
+  color: #fff;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.text_content button {
+  width: fit-content;
+  border: 0;
+  color: #092c4c;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: #ffc727;
+}
+/* ------------ Browse section ----------- */
+.browse {
+  margin: 6rem 10px;
+}
+.browse h2 {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.browse h4 {
+  color: #092c4c;
+  font-family: Manrope;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 3rem;
+}
+.browse_flex {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 2rem; */
+}
+.browse_flex .row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #e7f2fc;
+}
+.browse_flex .row h2 {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  max-width: 12rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.browse_flex .row img {
+  width: 6rem;
+}
+.mg {
+  margin: 0 10px;
+}
+/* ---------- Client/Feedback ------------------ */
+.client {
+  margin: 6rem 10px;
+}
+.swiper {
+  padding: 015px 12px 64px 15px !important;
+}
+.feedback {
+  /* height: calc(100% + 70px); */
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.feedback_flex {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  align-items: center;
+  gap: 2rem;
+  background-color: #fff;
+  box-shadow: 0px 12px 50px 0px rgba(0, 0, 0, 0.25);
+}
+.feedback_flex img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+.feedback_flex h3 {
+  color: #000;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.feedback_flex p {
+  color: #000;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  height: 9.125rem;
+  line-height: normal;
+}
+.star {
+  display: flex;
+  font-size: 20px;
+  color: #ffc727;
+  margin-bottom: -1rem;
+}
+
+/* --------------- Learn/impact ------------ */
+.end {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 63, 97, 1) 50%,
+    rgba(23, 161, 250, 1) 50%
+  );
+}
+.end_content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.learn,
+.impact {
+  color: #fff;
+  max-width: 33rem;
+  margin: 5rem 10px;
+}
+.learn_content,
+.impact_content {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.learn h2,
+.impact h2 {
+  color: #fff;
+  font-family: Manrope;
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 3.69375rem; /* 105.536% */
+}
+.learn p,
+.impact p {
+  color: #fff;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+}
+button h3 {
+  color: #092c4c;
+  font-family: Manrope;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.end button {
+  border-radius: 1rem;
+  background: #ffc727;
+  border: none;
+  text-align: left;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 29rem;
+  padding: 1.5rem 1rem;
+}
+.flex_btn {
+  display: flex;
+  align-items: center;
+}
+.p {
+  font-size: 5rem;
+}
+/* -------------- Footer ------------- */
+footer {
+  max-width: 1245px;
+  margin: 5rem auto;
+}
+.top_footer_flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.top_footer_row_one {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 35%;
+  border-right: 1.5px solid #000;
+}
+.top_footer_row_one p {
+  color: #000;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.social {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2rem !important;
+}
+.social img {
+  max-width: 6.9375rem;
+  max-height: 2.1875rem;
+}
+.top_footer_row_two {
+  display: flex;
+  width: 55%;
+  justify-content: space-between;
+}
+.row_two h3 {
+  margin-bottom: 1.5rem;
+  color: #000;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+footer ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer ul li {
+  color: #000;
+  font-family: Manrope;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.footer {
+  background-color: #2a3f61;
+}
+
+.footer_content {
+  max-width: 1255px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.copyright {
+  color: #fff;
+  font-family: Manrope;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 2rem 0;
+}
+.links a {
+  color: #fff;
+  font-family: Manrope;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+.links {
+  display: flex;
+  margin: 2rem 0;
+  gap: 2rem;
+}
+@media (max-width: 890px) {
+  .links {
+    display: none;
+  }
+  .business_content,
+  .join_content {
+    flex-direction: column-reverse;
+  }
+  .text_content,
+  .bus_text,
+  .join_text {
+    width: 95%;
+    margin-bottom: 1rem;
+  }
+  .bus,
+  .firststep {
+    margin: 0 auto;
+    width: 90%;
+    height: 20rem;
+  }
+  .browse_flex {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .bus_text,
+  .join_text {
+    margin: 0 auto;
+  }
+  .end {
+    flex-direction: column;
+  }
+  .learn,
+  .impact {
+    width: 100%;
+  }
+  .text_content h2 {
+    font-size: 2rem;
+  }
+  .swiper-slide {
+    width: 15rem !important;
+    padding: 1rem;
+    margin-left: -10px;
+  }
+  .feedback_flex {
+    width: 15rem !important;
+    padding: 1rem;
+  }
+  .end {
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(42, 63, 97, 1) 50%,
+      rgba(23, 161, 250, 1) 50%
+    );
+  }
+  .end_content {
+    flex-direction: column;
+  }
+
+  .impact,
+  .learn {
+    margin: 10px auto;
+    width: 100%;
+  }
+  .top_footer_flex {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  .top_footer_row_two {
+    width: 100%;
+  }
+  .top_footer_row_one {
+    width: 60%;
+    border: none;
+    margin: 0 auto;
+    border-bottom: 1.5px solid #000;
+  }
+  .search_box {
+    flex-direction: column;
+    width: 90%;
+    margin-left: 10px;
+  }
+  .search_flex {
+    /* margin: 0 auto; */
+    width: 90%;
+  }
+  .hero_flex h1 {
+    font-size: 3rem;
+    margin-left: 10px;
+  }
+
+  input[type="submit"] {
+    max-width: 15rem;
+  }
+}
+@media (max-width: 670px) {
+  .trust_flex {
+    position: relative;
+    z-index: 3;
+  }
+}
+@media (max-width: 530px) {
+  .top_footer_row_two {
+    flex-direction: column;
+    max-width: 50%;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+  .search_flex {
+    flex-direction: column;
+  }
+  #worker {
+    width: 100%;
+  }
+  .marker {
+    width: 100%;
+  }
+  .social {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem !important;
+  }
+}
+@media (max-width: 507px) {
+  .hero_flex h1 {
+    font-size: 2.2rem;
+  }
+  .search_flex {
+    width: 100%;
+  }
+  .trust_flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .search_flex select {
+    font-size: 12px;
+  }
+  .hero_search {
+    margin-top: 2rem;
+  }
+  .product {
+    margin: 0;
+    gap: 0;
+    flex-direction: column;
+  }
+  .hero_flex::before {
+    top: 110px;
+    left: 20%;
+    z-index: 1;
+    size: 33rem;
+  }
+}
+@media (max-width: 330px) {
+  .text_content h3 {
+    flex-direction: column;
+  }
+
+  .swiper-slide {
+    width: 15.35rem !important;
+    margin: 0;
+  }
+}
+
+/* ---------------Navbar --------------------- */
+nav {
+  background-color: #2a3f61;
+}
+.nav_content {
+  max-width: 1355px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav_content_left {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 2rem;
+}
+/* ======================INFO BUTTON ================ */
+.dropbtn {
+  color: #fff;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  background-color: transparent;
+  border: none;
+  font-weight: 500;
+  line-height: 1.75rem; /* 175% */
+}
+.sty {
+  color: #fff;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.75rem; /* 175% */
+  text-decoration: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  width: 15rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+}
+
+.dropdown-content a:hover {
+  border-bottom: 1.5px solid black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a:active {
+  border-bottom: 1.5px solid black;
+}
+
+.dropdown:active .dropdown-content {
+  display: block;
+}
+
+.login_btn {
+  color: #fff;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fff;
+}
+
+.signup_btn {
+  color: #2a3f61;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+.log_siginbtn {
+  display: flex;
+  column-gap: 2rem;
+}
+.mobile {
+  margin: 2rem 2rem 2rem 10px;
+}
+.omo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.mobilev {
+  display: none;
+}
+.mobile-link {
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #2a3f61;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 790px) {
+  .omo {
+    display: none;
+  }
+  .mobilev {
+    display: flex;
+    margin-right: 10px;
+    color: #fff;
+    background-color: transparent;
+    font-size: 2rem;
+    border: none;
+  }
+  .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #fff;
+    width: 18rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+  }
+  .nav_content_left {
+    flex-direction: column;
+  }
+}
+.dropdown-content a {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.75rem; /* 175% */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --------- Signup --------- */
+.signupoption {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+header.logo {
+  margin: 1rem;
+  max-width: 16rem;
+}
+header.logo img {
+  width: 100%;
+}
+.signupoption_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.3rem;
+  margin: 0 auto;
+}
+.signupoption_content img {
+  height: 100%;
+}
+.signupoption_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 59rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  margin: 0 1rem;
+  text-decoration: none;
+}
+.signupoption_text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.signupoption_box h4 {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  max-width: 29.5rem;
+}
+.size {
+  font-size: 2.5rem;
+  color: #2a3f61;
+}
+.signupoption_box p {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 1.5rem;
+}
+.signupoption_content p.lo {
+  color: #000;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.signupoption_content a.lo {
+  color: #077bc6;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+/* ------------ Talent Signup ------------- */
+.talentsignup {
+  background-color: #2a3f61;
+  padding-top: 0.1px;
+  padding-bottom: 5rem;
+}
+.talentsignup_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.talentsignup_content {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 30rem;
+  padding: 2rem;
+  margin: 0 auto;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0px 10px 16px 0px rgba(42, 63, 97, 0.25);
+}
+.inputfield {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+}
+.policy {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.policy p {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 0.8rem;
+  font-style: normal;
+  max-width: 38rem;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.talentsignup h2 {
+  color: #2a3f61;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.signupextention {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin: 1rem 0;
+}
+.talentsignup label {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  width: 30rem;
+  margin: 0 auto;
+}
+.talentsignup_form input[type="text"],
+.talentsignup_form input[type="tel"],
+.talentsignup_form input[type="password"],
+.talentsignup_form input[type="email"] {
+  width: 28rem;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  border: 2px solid #2a3f61;
+  padding: 0.6rem 1rem;
+
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.talentsignup_form input[type="checkbox"] {
+  width: 2rem;
+}
+.signupextention a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #2a3f61;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+
+  border-radius: 1rem;
+  border: 2px solid #2a3f61;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.margin_content {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+header.logo2 {
+  margin: 1rem 0 3rem 0;
+  max-width: 16rem;
+}
+header.logo2 img {
+  width: 100%;
+}
+.log {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 1rem 0;
+}
+.log a {
+  text-decoration: none;
+}
+.error {
+  background-color: #092c4c;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: Manrope;
+  padding: 0.5rem 1rem;
+  border-radius: 01rem;
+}
+
+/* ---------- Compaany signup-------------- */
+.companysignup {
+  background-color: #2a3f61;
+  padding-top: 0.1px;
+  padding-bottom: 5rem;
+}
+.companysignup_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.companysignup_content {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: 30rem;
+  padding: 2rem;
+  margin: 0 auto;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0px 10px 16px 0px rgba(42, 63, 97, 0.25);
+}
+.companysignup h2 {
+  color: #2a3f61;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.companysignup label {
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  width: 30rem;
+  margin: 0 auto;
+}
+.companysignup_form input[type="text"],
+.companysignup_form input[type="tel"],
+.companysignup_form input[type="password"],
+.companysignup_form input[type="email"] {
+  width: 28rem;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  border: 2px solid #2a3f61;
+  padding: 0.6rem 1rem;
+
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.companysignup_form input[type="checkbox"] {
+  width: 2rem;
+}
+
+.companysignup .sub {
+  color: #fff;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.signupextention a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #2a3f61;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+
+  border-radius: 1rem;
+  border: 2px solid #2a3f61;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+@media (max-width: 550px) {
+  .talentsignup_content,
+  .companysignup_content {
+    width: 80vw;
+  }
+  .talentsignup label,
+  .companysignup label {
+    width: 70vw;
+  }
+  .talentsignup_form input[type="text"],
+  .talentsignup_form input[type="tel"],
+  .talentsignup_form input[type="password"],
+  .talentsignup_form input[type="email"],
+  .companysignup_form input[type="text"],
+  .companysignup_form input[type="tel"],
+  .companysignup_form input[type="password"],
+  .companysignup_form input[type="email"] {
+    width: 80% !important;
+  }
+}
+@media (max-width: 520px) {
+  .signupoption_box {
+    flex-direction: column;
+  }
+
+  .signupoption_text {
+    text-align: center;
+  }
+  .signupextention {
+    flex-direction: column;
+    row-gap: 10px;
+    text-align: center;
+  }
+}
