@@ -3,9 +3,19 @@ import { useState } from "react";
 import { auth } from "../components/firebase";
 import { Link } from "react-router-dom";
 import { BsLinkedin, BsFacebook } from "react-icons/bs";
+import { signInWithEmailAndPassword } from "firebase/auth";
 const login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const LoginHandler = async (e) => {
     e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="login">
@@ -34,18 +44,18 @@ const login = () => {
                 <input
                   type="email"
                   placeholder="Enter email address"
-                  // value={user.email}
+                  value={email}
                   name="email"
-                  // onChange={UserHandler}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="log-inputfield">
                 <input
                   type="password"
                   placeholder="Password"
-                  // value={user.password}
+                  value={password}
                   name="password"
-                  // onChange={UserHandler}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <input type="submit" value="Sign In" />
@@ -59,17 +69,19 @@ const login = () => {
             </div>
             <hr className="loginhr" />
             <p className="log">
-            Not a member?{" "}
-            <Link className="logg" to="/pre-signup">
-              Join Now
-            </Link>
-          </p>
+              Not a member?{" "}
+              <Link className="logg" to="/pre-signup">
+                Join Now
+              </Link>
+            </p>
           </div>
         </div>
         <div className="login-right">
           <div className="login-right_flex">
             <img src="/lp/team.png" alt="" />
-            <h3>Where <span className="coll">Green</span> Thrives</h3>
+            <h3>
+              Where <span className="coll">Green</span> Thrives
+            </h3>
           </div>
         </div>
       </div>

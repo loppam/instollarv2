@@ -34,7 +34,8 @@ const UserAuthContext = ({ children }) => {
       .then(async (result) => {
         console.log(result);
         try {
-          const docRef = await addDoc(collection(db, "users"), {
+          const ref = doc(db, "users", result.user.uid);
+          const docRef = await setDoc(ref, {
             email,
             FullName,
             PhoneNumber,

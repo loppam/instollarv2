@@ -7,8 +7,6 @@ body,
 #root {
   width: 100%;
   height: 100%;
-}
-body {
   overflow-x: hidden;
 }
 button {
@@ -1423,13 +1421,16 @@ header.logo2 img {
     width: 80%;
     margin: 0 auto;
   }
-  .login_form{
+  .login_form {
     width: 90%;
   }
-  .login-extra{
+  .login-extra {
     width: 80%;
     align-items: center;
     gap: 2rem;
     flex-direction: column;
+  }
+  .login_form input[type="submit"] {
+    max-width: 100%;
   }
 }

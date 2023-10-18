@@ -44,7 +44,8 @@ const CompanyAuthcontext = ({ children }) => {
       .then(async (result) => {
         console.log(result);
         try {
-          const docRef = await addDoc(collection(db, "company"), {
+          const ref = doc(db, "company", result.user.uid);
+          const docRef = await setDoc(ref, {
             email,
             PhoneNumber,
             BusinessName,
