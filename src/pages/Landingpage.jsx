@@ -100,24 +100,15 @@ const Landingpage = () => {
           <div className="browse_flex">
             <div className="row">
               <img src="/lp/vector.png" alt="" />
-              <h2>
-                Residential <br />
-                Installation
-              </h2>
+              <h2>Residential Installation</h2>
             </div>
             <div className="row">
               <img src="/lp/vector-1.png" alt="" />
-              <h2>
-                Mini/Micro - Grid
-                <br />
-                Installation
-              </h2>
+              <h2>Mini/Micro - Grid Installation</h2>
             </div>
             <div className="row">
               <img src="/lp/vector-2.png" alt="" />
-              <h2>
-                Commercial <br /> Installation
-              </h2>
+              <h2>Commercial Installation</h2>
             </div>
           </div>
         </div>
@@ -137,9 +128,7 @@ const Landingpage = () => {
           <img src="/lp/firststep.png" alt="" className="firststep" />
         </div>
       </div>
-      <div className="client">
-        <Feedback />
-      </div>
+      <div className="client"><Feedback /></div>
       <div className="end">
         <div className="end_content">
           <div className="learn">
