@@ -1006,7 +1006,7 @@ header.logo img {
 .signupoption_box h4 {
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 2rem;
+  font-size: calc(var(--h2-font-mobile) - 4px);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1020,7 +1020,7 @@ header.logo img {
 .signupoption_box p {
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 0.9rem;
+  font-size: var(--p-font);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1030,7 +1030,7 @@ header.logo img {
   color: #000;
   text-align: center;
   font-family: Manrope;
-  font-size: 1.5rem;
+  font-size: var(--p-font);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1056,6 +1056,7 @@ header.logo img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   gap: 1rem;
 }
 .talentsignup_content {
@@ -1085,7 +1086,7 @@ header.logo img {
 .policy p {
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 0.8rem;
+  font-size: var(--p-font-mobile);
   font-style: normal;
   max-width: 38rem;
   font-weight: 600;
@@ -1096,7 +1097,7 @@ header.logo img {
   color: #2a3f61;
   text-align: center;
   font-family: Manrope;
-  font-size: 2rem;
+  font-size: var(--h1-font-mobile);
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -1113,7 +1114,7 @@ header.logo img {
 .talentsignup label {
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 1rem;
+  font-size: var(--p-font);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1133,13 +1134,26 @@ header.logo img {
 
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 1rem;
+  font-size: var(--p-font-mobile);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 .talentsignup_form input[type="checkbox"] {
   width: 2rem;
+}
+.talentsignup_form input[type="submit"] {
+  width: 80%;
+  padding: 1rem;
+  background-color: #2a3f61;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: Manrope;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: var(--p-font);
+  margin: 0 auto;
 }
 .signupextention a {
   display: flex;
@@ -1185,7 +1199,7 @@ header.logo2 img {
 .error {
   background-color: #092c4c;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: var(--p-font);
   font-family: Manrope;
   padding: 0.5rem 1rem;
   border-radius: 01rem;
@@ -1221,16 +1235,28 @@ header.logo2 img {
   color: #2a3f61;
   text-align: center;
   font-family: Manrope;
-  font-size: 2rem;
+  font-size: var(--h1-font-mobile);
   font-style: normal;
   font-weight: 800;
   line-height: normal;
 }
-
+.companysignup input[type="submit"] {
+  width: 80%;
+  padding: 1rem;
+  background-color: #2a3f61;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: Manrope;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: var(--p-font);
+  margin: 0 auto;
+}
 .companysignup label {
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 1rem;
+  font-size: var(--p-font);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1250,7 +1276,7 @@ header.logo2 img {
 
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 1rem;
+  font-size: var(--p-font-mobile);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1263,7 +1289,7 @@ header.logo2 img {
   color: #fff;
   text-align: center;
   font-family: Manrope;
-  font-size: 1.5rem;
+  font-size: var(--p-font);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1331,7 +1357,7 @@ header.logo2 img {
   color: #2a3f61;
   text-align: center;
   font-family: Manrope;
-  font-size: 2rem;
+  font-size: var(--h1-font-mobile);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1348,7 +1374,7 @@ header.logo2 img {
   color: #2a3f61;
   text-align: center;
   font-family: Manrope;
-  font-size: 1.5rem;
+  font-size: var(--p-font);
   letter-spacing: 0.15rem;
   font-style: normal;
   font-weight: 500;
@@ -1367,7 +1393,7 @@ header.logo2 img {
   color: #2a3f61;
   text-align: center;
   font-family: Manrope;
-  font-size: 2rem;
+  font-size: var(--h2-font-mobile);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1389,7 +1415,7 @@ header.logo2 img {
   width: 70%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--p-font);
 }
 .login_form input[type="password"],
 .login_form input[type="email"] {
@@ -1420,6 +1446,7 @@ header.logo2 img {
   color: #fff;
   text-align: center;
   font-family: Manrope;
+  padding: 1rem;
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -1432,7 +1459,7 @@ header.logo2 img {
 
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 1rem;
+  font-size: var(--p-font-mobile);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1446,7 +1473,7 @@ header.logo2 img {
 .login-extra a {
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 1rem;
+  font-size: var(--p-font-mobile);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1459,7 +1486,7 @@ header.logo2 img {
 .logg {
   color: #077bc6;
   font-family: Manrope;
-  font-size: 1rem;
+  font-size: var(--p-font);
   font-style: normal;
   font-weight: 800;
   line-height: normal;
