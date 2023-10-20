@@ -1,7 +1,7 @@
 :root {
   --h1-font: 58px;
   --h1-font-mobile: 38px;
-  --h2-font: 45px;
+  --h2-font: 40px;
   --h2-font-mobile: 32px;
   --p-font: 16px;
   --p-font-mobile: 12px;
@@ -363,10 +363,12 @@ ul.swiperr li p {
 }
 /* ---------- Client/Feedback ------------------ */
 .client {
-  margin: 6rem 10px;
+  margin: 0 auto;
+  max-width: 1024px;
 }
 
 ul.feedback {
+  margin: 6rem 10px;
   display: flex;
   padding: 25px 0;
   list-style: none;
@@ -394,6 +396,7 @@ ul.feedback li {
 ul.feedback li:hover {
   background-color: #2a3f61;
   color: #fff !important;
+  scale: 1.1;
 }
 ul.feedback li img {
   width: 8rem;
