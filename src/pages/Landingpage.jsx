@@ -92,7 +92,7 @@ const Landingpage = () => {
       </div>
       <div className="browse">
         <div className="content">
-          <h2>Browse our network by category</h2>
+          <h3>Browse our network by category</h3>
           <h4>
             What type of project are you working on. We have talents to match
             your specific need!
@@ -100,15 +100,15 @@ const Landingpage = () => {
           <div className="browse_flex">
             <div className="row">
               <img src="/lp/vector.png" alt="" />
-              <h2>Residential Installation</h2>
+              <p>Residential Installation</p>
             </div>
             <div className="row">
               <img src="/lp/vector-1.png" alt="" />
-              <h2>Mini/Micro - Grid Installation</h2>
+              <p>Mini/Micro - Grid Installation</p>
             </div>
             <div className="row">
               <img src="/lp/vector-2.png" alt="" />
-              <h2>Commercial Installation</h2>
+              <p>Commercial Installation</p>
             </div>
           </div>
         </div>

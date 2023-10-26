@@ -9,9 +9,8 @@ const MainFooter = () => {
             Copyright © 2023 Instollar LLC, All Right Reserved
           </div>
           <div className="links">
-            <Link>About</Link>
-            <Link>How it works</Link>
-            <Link>Contact Us</Link>
+            <Link to="/about">About Us</Link>
+            <Link to="/contact">Contact Us</Link>
             <Link>Privacy Policy</Link>
           </div>
         </div>

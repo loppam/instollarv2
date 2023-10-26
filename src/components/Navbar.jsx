@@ -8,13 +8,17 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav_content">
-        <img src="/lp/instollar.png" alt="" className="mobile" />
+        <Link to="/">
+          <img src="/lp/instollar.png" alt="" className="mobile" />
+        </Link>
         <div
           className={Mobile ? "mobile-link" : "omo"}
           onClick={() => setMobile(false)}
         >
           <div className="nav_content_left">
-            <Link className="sty">About us</Link>
+            <Link to="/about" className="sty">
+              About us
+            </Link>
             <div className="dropdown">
               <button className="dropbtn">Freelancers</button>
               <div className="dropdown-content">
@@ -23,7 +27,7 @@ const Navbar = () => {
                   Become a Green Energy Talent
                 </Link>
 
-                <Link to="">
+                <Link to="/training-and-certification">
                   <img src="/lp/healthicons_i-training-class.png" alt="" />
                   Training & Certification
                 </Link>
@@ -36,7 +40,7 @@ const Navbar = () => {
                   <img src="/lp/material-symbols_model-training.png" alt="" />
                   Training Sponsorship
                 </Link>
-                <Link to="">
+                <Link to="/instollar-business">
                   <img src="/lp/navector.png" alt="" />
                   Instollar Business
                 </Link>

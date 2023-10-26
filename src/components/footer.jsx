@@ -9,11 +9,12 @@ const footer = () => {
         <div className="top_footer_flex">
           <div className="top_footer_row_one">
             <p>
-              This would contain the coporate
-              <br />
-              addresses of the company
+              AfricaWorks Block D 16 Idowu Martins Street, VI Lagos Island,
+              Lagos Nigeria <br /> <br />
+              Instollar LLC - USA 201 N McDowell St #31064 Charlotte, NC 28204
+              USA
             </p>
-            <Link to="">Mailto: </Link>
+            <Link to="mailto:info@instollar.com">info@instollar.com</Link>
             <div className="social">
               <img src="/lp/instollar-alt.png" alt="" />
               <AiFillLinkedin />
@@ -22,28 +23,23 @@ const footer = () => {
           </div>
           <div className="top_footer_row_two">
             <div className="row_two">
-              <h3>For Companies</h3>
+              <h4>For Companies</h4>
               <ul>
-                <li>Sponsorship</li>
+                <li>Training Sponsorship</li>
                 <li>Instollar Business</li>
-                <li>Reviews</li>
-                <li>Industrial</li>
               </ul>
             </div>
             <div className="row_two">
-              <h3>For Talent</h3>
+              <h4>For Talent</h4>
               <ul>
-                <li>Training</li>
+                <li>Training & Certification</li>
                 <li>Top Talents</li>
-                <li>Residential</li>
-                <li>Commercial</li>
               </ul>
             </div>
             <div className="row_two">
-              <h3>Instollar LLC</h3>
+              <h4>Instollar LLC</h4>
               <ul>
                 <li>About Us</li>
-                <li>How it works</li>
                 <li>Contact Us</li>
                 <li>Terms & Conditions</li>
               </ul>
