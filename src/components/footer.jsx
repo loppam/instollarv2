@@ -25,23 +25,41 @@ const footer = () => {
             <div className="row_two">
               <h4>For Companies</h4>
               <ul>
-                <li>Training Sponsorship</li>
-                <li>Instollar Business</li>
+                <li>
+                  <Link to="/training-and-sponsorship">
+                    Training Sponsorship
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/instollar-business">Instollar Business</Link>
+                </li>
               </ul>
             </div>
             <div className="row_two">
               <h4>For Talent</h4>
               <ul>
-                <li>Training & Certification</li>
-                <li>Top Talents</li>
+                <li>
+                  <Link to="/training-and-certification">
+                    Training & Certification
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/top-talents">Top Talents</Link>
+                </li>
               </ul>
             </div>
             <div className="row_two">
               <h4>Instollar LLC</h4>
               <ul>
-                <li>About Us</li>
-                <li>Contact Us</li>
-                <li>Terms & Conditions</li>
+                <li>
+                  <Link to="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contact Us</Link>
+                </li>
+                <li>
+                  <Link to="/terms-and-conditions">Terms & Conditions</Link>
+                </li>
               </ul>
             </div>
           </div>

@@ -10,6 +10,8 @@ import Companysignup from "./pages/companysignup";
 import About from "./pages/About";
 import TandC from "./pages/TandC";
 import Business from "./pages/Business";
+import TandS from "./pages/TandS";
+import Contact from "./pages/contact";
 function App() {
   return (
     <>
@@ -19,7 +21,9 @@ function App() {
         <Route path="/pre-signup" element={<Signupoption />} />
         <Route path="/about" element={<About />} />
         <Route path="/training-and-certification" element={<TandC />} />
+        <Route path="/training-and-sponsorship" element={<TandS />} />
         <Route path="/instollar-business" element={<Business />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/talent-signup"
           element={

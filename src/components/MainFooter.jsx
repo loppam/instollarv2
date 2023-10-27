@@ -11,7 +11,7 @@ const MainFooter = () => {
           <div className="links">
             <Link to="/about">About Us</Link>
             <Link to="/contact">Contact Us</Link>
-            <Link>Privacy Policy</Link>
+            <Link to="/">Privacy Policy</Link>
           </div>
         </div>
       </div>

@@ -36,7 +36,7 @@ const Navbar = () => {
             <div className="dropdown">
               <button className="dropbtn">Solar Companies</button>
               <div className="dropdown-content">
-                <Link to="/">
+                <Link to="/training-and-sponsorship">
                   <img src="/lp/material-symbols_model-training.png" alt="" />
                   Training Sponsorship
                 </Link>
