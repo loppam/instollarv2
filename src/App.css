@@ -20,6 +20,7 @@ body,
   height: 100%;
 }
 body {
+  position: relative;
   overflow-x: hidden;
 }
 button {
