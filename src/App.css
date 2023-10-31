@@ -33,6 +33,7 @@ button {
   min-height: 714px;
   position: relative;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .coll {
   color: #38aa34;
