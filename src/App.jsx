@@ -12,6 +12,9 @@ import TandC from "./pages/TandC";
 import Business from "./pages/Business";
 import TandS from "./pages/TandS";
 import Contact from "./pages/contact";
+import Terms from "./pages/Terms";
+import Error from "./pages/Error";
+import TopTalents from "./pages/TopTalents";
 function App() {
   return (
     <>
@@ -24,6 +27,9 @@ function App() {
         <Route path="/training-and-sponsorship" element={<TandS />} />
         <Route path="/instollar-business" element={<Business />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/terms-and-conditions" element={<Terms />} />
+        <Route path="/*" element={<Error />} />
+        <Route path="/top-talents" element={<TopTalents />} />
         <Route
           path="/talent-signup"
           element={
