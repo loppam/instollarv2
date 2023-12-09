@@ -2583,9 +2583,13 @@ form.formleft {
   background-color: #2a3f61;
   color: #fff;
   width: calc(20% - 50px);
-
+  text-decoration: none;
   padding: 10px;
   border-radius: 8px;
+}
+a.card {
+  all: unset;
+  cursor: pointer;
 }
 .card img {
   width: 100%;
@@ -2620,7 +2624,6 @@ form.formleft {
 @media screen and (max-width: 768px) {
   .card {
     width: calc(100% / 3 - 20px);
-    padding-right: 30px;
   }
 }
 @media screen and (max-width: 520px) {
@@ -2661,32 +2664,65 @@ form.formleft {
   align-items: center;
 }
 
-.topthflex select{
+.topthflex select {
   font-family: Manrope;
   color: #2a3f61;
   border-color: #2a3f61;
-  border-radius: 0.5rem;padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
-.top_talent_head{
+.top_talent_head {
   max-width: 93.5%;
   margin: 0 auto;
   font-family: Manrope;
   color: #2a3f61;
 }
-.top_talent_head h2{
+.top_talent_head h2 {
   font-weight: 500;
   font-size: 30px;
   margin-bottom: 1rem;
   margin-top: 2rem;
 }
-.top_talent_head p{
+.top_talent_head p {
   font-weight: 300;
   font-size: var(--p-mobile-big);
   margin-bottom: 3.5rem;
 }
 
-.topthflex p{
+.topthflex p {
   font-size: var(--p-font);
   margin: 0;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #1d1d1d;
+  border-color: #1d1d1d transparent #1d1d1d transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-container {
+  display: grid;
+  place-items: center;
+  align-items: center;
+  height: 100vh;
 }
