@@ -4,6 +4,9 @@ import { auth } from "../components/firebase";
 import { Link } from "react-router-dom";
 import { BsLinkedin, BsFacebook } from "react-icons/bs";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Navbar from "../components/Navbar";
+import MainFooter from "../components/MainFooter";
+import Footer from "../components/footer";
 const login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,72 +22,42 @@ const login = () => {
   };
   return (
     <div className="login">
+      <Navbar />
       <div className="login-flex">
-        <div className="login-left">
-          <header className="logo">
-            <img src="/lp/instollardark.png" alt="" />
-          </header>
-          <div className="login-left_content">
-            <h2>Sign In</h2>
-            <div className="loginextention">
-              <Link>
-                <BsLinkedin /> Sign in with LinkedIn
-              </Link>
-              <Link>
-                <BsFacebook /> Sign in with Facebook
-              </Link>
-            </div>
-            <div className="or">
-              <hr />
-              or
-              <hr />
-            </div>
-            <form onSubmit={LoginHandler} className="login_form">
-              <div className="log-inputfield">
-                <input
-                  type="email"
-                  placeholder="Enter email address"
-                  value={email}
-                  name="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="log-inputfield">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  name="password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              <input type="submit" value="Sign In" />
-            </form>
-            <div className="login-extra">
-              <div className="check">
-                <input type="checkbox" name="" id="" />
-                Remember me
-              </div>
-              <Link>Forgot Password</Link>
-            </div>
-            <hr className="loginhr" />
-            <p className="log">
-              Not a member?{" "}
-              <Link className="logg" to="/pre-signup">
-                Join Now
-              </Link>
-            </p>
-          </div>
+        <h2>Login to Instollar</h2>
+        <div className="header_img">
+          <img src="/lp/instollardark.png" alt="" />
         </div>
-        <div className="login-right">
-          <div className="login-right_flex">
-            <img src="/lp/team.png" alt="" />
-            <h3>
-              Where <span className="coll">Green</span> Thrives
-            </h3>
+        <form onSubmit={LoginHandler} className="login_form">
+          <div className="log-inputfield">
+            <input
+              type="email"
+              placeholder="Enter email address"
+              value={email}
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
-        </div>
+          <div className="log-inputfield">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              name="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <input type="submit" value="Sign In" />
+        </form>
+        <p className="log">
+          Not a member?{" "}
+          <Link className="logg" to="/pre-signup">
+            Join Now
+          </Link>
+        </p>
       </div>
+      <Footer />
+      <MainFooter />
     </div>
   );
 };

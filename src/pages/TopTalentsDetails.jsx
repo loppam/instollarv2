@@ -4,6 +4,7 @@ import { MdLocationOn } from "react-icons/md";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import MainFooter from "../components/MainFooter";
+import { Link } from "react-router-dom";
 
 const TopTalentsDetails = () => {
   const { uuid } = useParams();
@@ -58,9 +59,9 @@ const TopTalentsDetails = () => {
                     <MdLocationOn /> {userDetails.location.state} {", "}{" "}
                     {userDetails.location.country}
                   </p>
-                  <button className="border_btn">
+                  <Link to='/login' className="border_btn">
                     Please Login to request a quote
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="flex_border">

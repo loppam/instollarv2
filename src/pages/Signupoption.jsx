@@ -17,7 +17,7 @@ const Signupoption = () => {
           <FiCheckSquare className="size" />
         </Link>
 
-        <Link to="/company-signup" className="signupoption_box">
+        <Link to="/onboarding" className="signupoption_box">
           <img src="/lp/signupop1.png" alt="" />
           <div className="signupoption_text">
             <h4>I am a company hiring for a project</h4>

@@ -6,6 +6,7 @@ import Feedback from "../components/feedback";
 import Navbar from "../components/Navbar";
 
 import MainFooter from "../components/MainFooter";
+import { Link } from "react-router-dom";
 const Landingpage = () => {
   return (
     <div className="landingpage">
@@ -84,7 +85,7 @@ const Landingpage = () => {
                 Our team can help you find the right talents for your solar
                 installation projects.
               </p>
-              <button>Discover Instollar Business</button>
+              <Link to="/instollar-business">Discover Instollar Business</Link>
             </div>
           </div>
           <img className="bus" src="/lp/business.png" alt="" />
@@ -122,13 +123,15 @@ const Landingpage = () => {
                 Become a part of our community today. We connect professionals
                 and companies in the green energy industry.
               </p>
-              <button>Take The First Step</button>
+              <Link to="/pre-signup">Take The First Step</Link>
             </div>
           </div>
           <img src="/lp/firststep.png" alt="" className="firststep" />
         </div>
       </div>
-      <div className="client"><Feedback /></div>
+      <div className="client">
+        <Feedback />
+      </div>
       <div className="end">
         <div className="end_content">
           <div className="learn">
@@ -140,13 +143,13 @@ const Landingpage = () => {
               </p>
               <button>
                 <h3>Training & Certification</h3>
-                <div className="flex_btn">
+                <Link to="/training-and-certification" className="flex_btn">
                   <p>
                     Learn more about our certifications, trainings &
                     accreditation.
                   </p>
                   <AiOutlineArrowRight className="p" />
-                </div>
+                </Link>
               </button>
             </div>
           </div>
@@ -159,12 +162,12 @@ const Landingpage = () => {
               </p>
               <button>
                 <h3>Training Sponsorship</h3>
-                <div className="flex_btn">
+                <Link to='/training-and-sponsorship' className="flex_btn">
                   <p>
                     Work with us to spread the knowledge of solar installation
                   </p>
                   <AiOutlineArrowRight className="p" />
-                </div>
+                </Link>
               </button>
             </div>
           </div>

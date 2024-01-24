@@ -28,7 +28,26 @@ const UserAuthContext = ({ children }) => {
       }
     });
   }, [currentuser]);
-  const SignUp = async (email, password, FullName, PhoneNumber, address) => {
+  const SignUp = async (
+    UserName,
+    email,
+    address,
+    PhoneNumber,
+    password,
+    FirstName,
+    LastName,
+    CityofRes,
+    LGAofRes,
+    id,
+    YearsofExp,
+    ResExp,
+    CommercialExp,
+    MiniGridExp,
+    link,
+    ProofAddress,
+    stateOfResidence,
+    language
+  ) => {
     setError("");
     createUserWithEmailAndPassword(auth, email, password)
       .then(async (result) => {
@@ -36,10 +55,24 @@ const UserAuthContext = ({ children }) => {
         try {
           const ref = doc(db, "users", result.user.uid);
           const docRef = await setDoc(ref, {
+            UserName,
             email,
-            FullName,
-            PhoneNumber,
             address,
+            PhoneNumber,
+            password,
+            FirstName,
+            LastName,
+            CityofRes,
+            LGAofRes,
+            id,
+            YearsofExp,
+            ResExp,
+            CommercialExp,
+            MiniGridExp,
+            link,
+            ProofAddress,
+            stateOfResidence,
+            language,
             userID: `${result.user.uid}`,
           });
 
@@ -51,15 +84,15 @@ const UserAuthContext = ({ children }) => {
       })
       .catch((err) => {
         if (err.code === "auth/email-already-in-use") {
-          setInterval(() => {
+          setTimeout(() => {
             setError("");
           }, 5000);
-          setError("Email already in use try another");
+          setError("Email already in use, try another");
         } else if (err.code === AuthErrorCodes.WEAK_PASSWORD) {
-          setInterval(() => {
+          setTimeout(() => {
             setError("");
           }, 5000);
-          setError("Password must be 6 characters");
+          setError("Password must be at least 6 characters");
         } else {
           setError(err.message);
         }

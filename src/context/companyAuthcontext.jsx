@@ -36,8 +36,7 @@ const CompanyAuthcontext = ({ children }) => {
     Offaddress,
     CACNO,
     yrsio,
-    expertise,
-    note
+    expertise
   ) => {
     setError("");
     createUserWithEmailAndPassword(auth, email, password)
@@ -53,7 +52,7 @@ const CompanyAuthcontext = ({ children }) => {
             CACNO,
             yrsio,
             expertise,
-            note,
+
             userID: `${result.user.uid}`,
           });
 

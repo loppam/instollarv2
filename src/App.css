@@ -17,6 +17,7 @@ html,
 body,
 #root {
   width: 100%;
+  -webkit-font-smoothing: antialiased;
   height: 100%;
 }
 
@@ -302,7 +303,7 @@ ul.swiperr li p {
   font-weight: 500;
   line-height: normal;
 }
-.text_content button {
+.text_content a {
   width: fit-content;
   border: 0;
   color: #092c4c;
@@ -312,6 +313,7 @@ ul.swiperr li p {
   font-weight: 700;
   line-height: normal;
   border-radius: 0.5rem;
+  text-decoration: none;
   padding: 1rem 2rem;
   background-color: #ffc727;
 }
@@ -503,10 +505,12 @@ button h3 {
   display: flex;
   align-items: center;
   height: 3rem;
+  text-decoration: none;
   padding-top: 0.5rem;
 }
 .p {
   font-size: 3rem;
+  color: #000;
 }
 /* -------------- Footer ------------- */
 footer {
@@ -1003,6 +1007,7 @@ header.logo img {
   align-items: center;
   justify-content: space-between;
   max-width: 59rem;
+  width: 80%;
   padding: 2rem;
   border-radius: 0.5rem;
   background: #fff;
@@ -1059,9 +1064,14 @@ header.logo img {
 
 /* ------------ Talent Signup ------------- */
 .talentsignup {
-  background-color: #2a3f61;
-  padding-top: 0.1px;
+  /* padding-top: 0.1px; */
   padding-bottom: 5rem;
+}
+.talentsignup_content .header_img,
+.companysignup_content .header_img {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 .talentsignup_form {
   width: 100%;
@@ -1071,14 +1081,28 @@ header.logo img {
 
   gap: 1rem;
 }
-.talentsignup_content {
+.contact_details h1,
+.qualifications h1,
+.login_info h1 {
+  font-family: Manrope;
+  font-size: 21px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #333;
+  padding: 15px 0;
+}
+.contact_details,
+.qualifications,
+.login_info {
   display: flex;
   flex-direction: column;
   width: fit-content;
-  max-width: 30rem;
-  padding: 2rem;
+  max-width: 35rem;
+  width: 100%;
+  padding: 1rem;
   margin: 0 auto;
-  align-items: center;
+  gap: 1rem;
   background-color: #fff;
   border-radius: 0.5rem;
   background: #fff;
@@ -1090,29 +1114,27 @@ header.logo img {
   gap: 0.3rem;
   width: 100%;
 }
-.policy {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.policy p {
-  color: #2a3f61;
-  font-family: Manrope;
-  font-size: var(--p-font-mobile);
-  font-style: normal;
-  max-width: 38rem;
-  font-weight: 600;
-  line-height: normal;
-}
-
 .talentsignup h2 {
-  color: #2a3f61;
+  color: #000;
   text-align: center;
   font-family: Manrope;
-  font-size: var(--h1-font-mobile);
+  font-size: 36px;
+  margin: 10px 0;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 400;
   line-height: normal;
+}
+.talentpar {
+  background-color: #fff000;
+  font-size: 14px;
+  font-family: manrope;
+  width: fit-content;
+  padding: 5px;
+}
+.talentparr {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px 0;
 }
 
 .signupextention {
@@ -1124,24 +1146,40 @@ header.logo img {
   margin: 1rem 0;
 }
 .talentsignup label {
-  color: #2a3f61;
+  color: #333;
   font-family: Manrope;
-  font-size: var(--p-font);
+  font-size: 14px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
 
-  width: 30rem;
+  width: 35rem;
   margin: 0 auto;
 }
 .talentsignup_form input[type="text"],
 .talentsignup_form input[type="tel"],
 .talentsignup_form input[type="password"],
 .talentsignup_form input[type="email"] {
-  width: 28rem;
+  max-width: 33rem;
+  width: 100%;
   margin: 0 auto;
   border-radius: 0.5rem;
-  border: 2px solid #2a3f61;
+  border: 1px solid #ddd;
+  padding: 0.6rem 1rem;
+
+  color: #2a3f61;
+  font-family: Manrope;
+  font-size: var(--p-font-mobile);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.talentsignup_form select,
+.companysignup_form select,
+.talentsignup_form input[type="date"] {
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+
   padding: 0.6rem 1rem;
 
   color: #2a3f61;
@@ -1155,7 +1193,7 @@ header.logo img {
   width: 2rem;
 }
 .talentsignup_form input[type="submit"] {
-  width: 80%;
+  width: 40%;
   padding: 1rem;
   background-color: #2a3f61;
   border: none;
@@ -1187,6 +1225,7 @@ header.logo img {
 }
 .margin_content {
   max-width: 1024px;
+  width: 95%;
   margin: 0 auto;
 }
 header.logo2 {
@@ -1218,11 +1257,7 @@ header.logo2 img {
 }
 
 /* ---------- Compaany signup-------------- */
-.companysignup {
-  background-color: #2a3f61;
-  padding-top: 0.1px;
-  padding-bottom: 5rem;
-}
+
 .companysignup_form {
   width: 100%;
   display: flex;
@@ -1234,26 +1269,28 @@ header.logo2 img {
   display: flex;
   flex-direction: column;
   width: fit-content;
-  max-width: 30rem;
-  padding: 2rem;
-  margin: 0 auto;
-  align-items: center;
+  max-width: 35rem;
+  width: 100%;
+  padding: 1rem;
+  margin: 3rem auto;
+  gap: 1rem;
   background-color: #fff;
   border-radius: 0.5rem;
   background: #fff;
   box-shadow: 0px 10px 16px 0px rgba(42, 63, 97, 0.25);
 }
 .companysignup h2 {
-  color: #2a3f61;
+  color: #000;
   text-align: center;
   font-family: Manrope;
-  font-size: var(--h1-font-mobile);
+  font-size: 36px;
+  margin: 10px 0;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 500;
   line-height: normal;
 }
 .companysignup input[type="submit"] {
-  width: 80%;
+  width: 40%;
   padding: 1rem;
   background-color: #2a3f61;
   border: none;
@@ -1266,24 +1303,25 @@ header.logo2 img {
   margin: 0 auto;
 }
 .companysignup label {
-  color: #2a3f61;
+  color: #333;
   font-family: Manrope;
-  font-size: var(--p-font);
+  font-size: 14px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
 
-  width: 30rem;
+  width: 35rem;
   margin: 0 auto;
 }
 .companysignup_form input[type="text"],
 .companysignup_form input[type="tel"],
 .companysignup_form input[type="password"],
 .companysignup_form input[type="email"] {
-  width: 28rem;
+  max-width: 33rem;
+  width: 100%;
   margin: 0 auto;
-  border-radius: 0.5rem;
-  border: 2px solid #2a3f61;
+  border-radius: 0.3rem;
+  border: 1px solid #ddd;
   padding: 0.6rem 1rem;
 
   color: #2a3f61;
@@ -1292,6 +1330,30 @@ header.logo2 img {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+.confirmationfield {
+  display: flex;
+  flex-direction: column;
+  max-width: 35rem;
+  width: 100%;
+  gap: 1rem;
+}
+.confirmationfield .confirmationfield_col {
+  display: flex;
+  align-items: center;
+}
+.confirmationfield .confirmationfield_col p {
+  line-height: 1.428571429;
+  font-size: 17px;
+}
+.confirmationfield .confirmationfield_col p a {
+  background-color: #fff000;
+  font-size: 14px;
+  font-family: manrope;
+  width: fit-content;
+  padding: 5px;
+  text-decoration: none;
+  color: #000;
 }
 .companysignup_form input[type="checkbox"] {
   width: 2rem;
@@ -1356,103 +1418,49 @@ header.logo2 img {
 }
 
 /* ---------------------- LOGIN --------------- */
-.login-right {
-  background-color: #2a3f61;
-  padding-top: 0.1px;
-  /* padding-bottom: 5rem; */
-  width: 60%;
-  height: 100vh;
-}
-.login-left {
-  width: 40%;
-}
 .login-flex {
   display: flex;
-  width: 100%;
-}
-.login-left_content {
-  width: 100%;
-  align-items: center;
-  display: flex;
   flex-direction: column;
-  margin-top: 3rem;
-  gap: 1.5rem;
-}
-.login-left_content h2 {
-  color: #2a3f61;
+  width: fit-content;
+  max-width: 29rem;
+  width: 100%;
+  padding: 1rem;
+  margin: 5rem auto;
   text-align: center;
-  font-family: Manrope;
-  font-size: var(--h1-font-mobile);
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-.loginextention {
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
-}
-.loginextention a {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  color: #2a3f61;
-  text-align: center;
-  font-family: Manrope;
-  font-size: var(--p-font);
-  letter-spacing: 0.15rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  text-decoration: none;
-
-  border-radius: 1rem;
-  border: 2px solid #2a3f61;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-.or {
-  display: block;
-  /* flex-direction: column; */
-  width: 100%;
-  color: #2a3f61;
-  text-align: center;
-  font-family: Manrope;
-  font-size: var(--h2-font-mobile);
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.or {
-  width: 80%;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-}
-.or hr {
-  transform: rotate(180deg);
-  width: 40%;
-
-  border-color: #2a3f61;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0px 10px 16px 0px rgba(42, 63, 97, 0.25);
 }
 .login_form {
-  width: 70%;
   display: flex;
   flex-direction: column;
-  gap: var(--p-font);
+  gap: 1.5rem;
 }
+.login-flex h2 {
+  color: #000;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 36px;
+  margin: 10px 0;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .login_form input[type="password"],
 .login_form input[type="email"] {
+  max-width: 27rem;
   width: 100%;
-  /* margin: 0 auto; */
-  border-radius: 0.5rem;
-  border: 2px solid #2a3f61;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  border: 1px solid #ddd;
   padding: 0.6rem 1rem;
 
   color: #2a3f61;
   font-family: Manrope;
-  font-size: 1rem;
+  font-size: var(--p-font-mobile);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1464,50 +1472,19 @@ header.logo2 img {
   width: 100%;
 }
 .login_form input[type="submit"] {
-  border: none;
-  background-color: #384766;
-  color: #ffffff;
-  border-radius: 0.5rem;
-  color: #fff;
-  text-align: center;
-  font-family: Manrope;
+  width: 40%;
   padding: 1rem;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  /* padding: 1.2rem 3.48rem; */
-}
-.check {
-  display: flex;
-  gap: 0.25rem;
-
-  color: #2a3f61;
+  background-color: #2a3f61;
+  border: none;
+  border-radius: 0.5rem;
   font-family: Manrope;
-  font-size: var(--p-font-mobile);
-  font-style: normal;
+  color: #fff;
+  text-transform: uppercase;
   font-weight: 600;
-  line-height: normal;
+  font-size: var(--p-font);
+  margin: 0 auto;
 }
 
-.login-extra {
-  display: flex;
-  justify-content: space-between;
-  width: 70%;
-}
-.login-extra a {
-  color: #2a3f61;
-  font-family: Manrope;
-  font-size: var(--p-font-mobile);
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-decoration: none;
-}
-.loginhr {
-  width: 90%;
-  border-color: #2a3f61;
-}
 .logg {
   color: #077bc6;
   font-family: Manrope;
@@ -1515,29 +1492,6 @@ header.logo2 img {
   font-style: normal;
   font-weight: 800;
   line-height: normal;
-}
-
-.login-right_flex {
-  display: flex;
-  flex-direction: column;
-  margin-top: 4rem;
-  gap: 1rem;
-}
-.login-right_flex img {
-  width: 100%;
-  height: 70vh;
-}
-.login-right_flex h3 {
-  color: #fafafa;
-  text-align: center;
-  font-family: Manrope;
-  font-size: 4rem;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 97.6%; /* 3.904rem */
-}
-.coll {
-  color: #38aa34;
 }
 
 @media (max-width: 900px) {
@@ -2759,9 +2713,10 @@ a.card {
 .border_btn {
   border: none;
   background-color: #2a3f61;
-  padding: 5px 10px;
+  padding: 3px 10px;
   border-radius: 5px;
   color: white;
+  text-decoration: none;
   margin: 10px 0 0;
 }
 .flex_border {
@@ -2861,4 +2816,175 @@ a.card {
   .border_right img {
     width: 88%;
   }
+}
+
+.terms .left_content {
+  display: flex;
+  flex-direction: column;
+  background-color: #e7f2fc;
+  padding: 50px 35px;
+  font-family: Manrope;
+  height: fit-content;
+}
+.terms .left_content a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #000;
+  padding: 10px 0;
+}
+.terms .right_content h3 {
+  text-transform: uppercase;
+  color: #2a3f61;
+  font-family: Manrope;
+  /* padding: 0 0 0 20px; */
+  margin: 10px 0;
+  font-weight: 500;
+  font-size: var(--h3-font);
+}
+.terms .right_content {
+  margin: 0 15px;
+  width: 60%;
+}
+.terms .content .flex {
+  display: flex;
+  width: 100%;
+}
+.terms .right_content #introduction h5,
+.terms .right_content #freelancers h5,
+.terms .right_content #companies h5,
+.terms .right_content #dandc h5,
+.terms .right_content #reviews h5,
+.terms .right_content #ucandp h5,
+.terms .right_content #overview h5,
+.terms .right_content #keyterms h5 {
+  font-family: Manrope;
+  margin: 10px 0;
+  font-size: var(--p-font-big);
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.terms .right_content #introduction p,
+.terms .right_content #freelancers p,
+.terms .right_content #companies p,
+.terms .right_content #dandc p,
+.terms .right_content #reviews p,
+.terms .right_content #ucandp p,
+.terms .right_content #overview p,
+.terms .right_content #keyterms p {
+  font-family: Manrope;
+  margin: 10px 0;
+  font-size: var(--p-font);
+  color: #000;
+  font-weight: 300;
+}
+.terms .right_content #freelancers h6,
+.terms .right_content #ucandp h6,
+.terms .right_content #companies h6 {
+  font-family: manrope;
+  color: #000;
+  font-weight: 300;
+  text-transform: capitalize;
+  margin: 10px 0;
+  font-size: var(--p-font);
+}
+.terms .right_content #companies ul li,
+.terms .right_content #freelancers ul li,
+.terms .right_content #ucandp ul li,
+.terms .right_content #reviews ul li,
+.terms .right_content #overview ul li {
+  list-style: none;
+  font-family: Manrope;
+  margin: 5px 0;
+  font-size: var(--p-font);
+  color: #000;
+  font-weight: 300;
+}
+@media screen and (max-width: 680px) {
+  .terms .content .flex {
+    flex-direction: column;
+  }
+  .terms .right_content {
+    width: 95%;
+  }
+}
+
+/* -------------- onboarding ------------------ */
+.onboarding_left h2 {
+  font-size: 36px;
+  font-family: Manrope;
+  color: #2a3f61;
+  margin: 20px 0 10px;
+  font-weight: 500;
+}
+.details_col {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #2a3f61;
+  color: #2a3f61;
+  margin: 20px 0 0;
+  padding: 20px 5px;
+  font-weight: 500;
+}
+.details_col:nth-child(3) {
+  margin-bottom: 3rem;
+}
+.details_col p {
+  font-family: Manrope;
+  font-size: 14px;
+}
+.onboarding_flex {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin: 5rem 0;
+}
+.onboarding_right {
+  max-width: 400px;
+}
+.onboarding_right img {
+  width: 100%;
+}
+.onboard_txt {
+  padding-top: 5rem;
+  font-family: Manrope;
+  font-size: 14px;
+  color: #000;
+}
+
+.onboard {
+  width: 40%;
+  padding: 1rem;
+  background-color: #2a3f61;
+  border: none;
+  text-decoration: none;
+  font-family: Manrope;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: var(--p-font);
+}
+@media screen and (max-width: 770px) {
+  .onboarding_flex {
+    flex-direction: column;
+  }
+}
+
+.contract .margin_content {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.contract .margin_content h3 {
+  color: #000;
+  font-size: 18px;
+  font-family: Manrope;
+  margin: 0 0 10px;
+  font-weight: 500;
+}
+.contract .margin_content p {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 10px;
 }

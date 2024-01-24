@@ -16,6 +16,8 @@ import Terms from "./pages/Terms";
 import Error from "./pages/Error";
 import TopTalents from "./pages/TopTalents";
 import TopTalentsDetails from "./pages/TopTalentsDetails";
+import Onboarding from "./pages/Onboarding";
+import Contract from "./pages/Contract";
 function App() {
   return (
     <>
@@ -31,6 +33,9 @@ function App() {
         <Route path="/terms-and-conditions" element={<Terms />} />
         <Route path="/*" element={<Error />} />
         <Route path="/top-talents" element={<TopTalents />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/contract-and-agreement" element={<Contract />} />
+
         <Route path="/user/:uuid" element={<TopTalentsDetails />} />
         <Route
           path="/talent-signup"

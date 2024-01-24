@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/companyAuthcontext";
 import { Link } from "react-router-dom";
 import { BsLinkedin, BsFacebook } from "react-icons/bs";
+import Navbar from "../components/Navbar";
+import MainFooter from "../components/MainFooter";
+import Footer from "../components/footer";
 
 const companysignup = () => {
   const { error, SignUp, currentuser } = useAuth();
@@ -15,7 +18,7 @@ const companysignup = () => {
     CACNO: "",
     yrsio: "",
     expertise: "",
-    note: "",
+
     confirmPassword: "",
     password: "",
   });
@@ -49,19 +52,18 @@ const companysignup = () => {
       CACNO,
       yrsio,
       expertise,
-      note,
+
     } = company;
     if (
       password == "" ||
       confirmPassword == "" ||
       email == "" ||
-    //   Offaddress == "" ||
+      //   Offaddress == "" ||
       PhoneNumber == "" ||
       BusinessName == "" ||
-    //   CACNO == "" ||
+      //   CACNO == "" ||
       yrsio == "" ||
-      expertise == "" ||
-      note == ""
+      expertise == "" 
     ) {
       setInterval(() => {
         setError("");
@@ -87,7 +89,6 @@ const companysignup = () => {
         CACNO,
         yrsio,
         expertise,
-        note
       );
       {
         currentuser &&
@@ -101,33 +102,29 @@ const companysignup = () => {
             CACNO: "",
             yrsio: "",
             expertise: "",
-            note: "",
+
           });
       }
     }
   };
   return (
     <div className="companysignup">
+      <Navbar />
       <div className="margin_content">
-        <header className="logo2">
-          <img src="/lp/instollar.png" alt="" />
-        </header>
         <div className="companysignup_content">
-          <h2>Sign Up</h2>
-          <div className="signupextention">
-            <Link>
-              <BsLinkedin /> Sign up with LinkedIn
-            </Link>
-            <Link>
-              <BsFacebook /> Sign up with Facebook
-            </Link>
+          <h2>Register Your Business With Instollar</h2>
+          <div className="talentparr">
+            <p className="talentpar">(*) Required Information</p>
+          </div>
+          <div className="header_img">
+            <img src="/lp/instollardark.png" alt="" />
           </div>
           {err
             ? err && <p className="error">{err}</p>
             : backError && <p className="error">{backError}</p>}
           <form onSubmit={SubmitHandler} className="companysignup_form">
             <div className="inputfield">
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">Email Address (*)</label>
               <input
                 type="email"
                 placeholder="Enter email address"
@@ -137,7 +134,7 @@ const companysignup = () => {
               />
             </div>
             <div className="inputfield">
-              <label htmlFor="PhoneNumber">Phone Number</label>
+              <label htmlFor="PhoneNumber">Phone Number (*)</label>
               <input
                 type="tel"
                 placeholder="Enter phone number"
@@ -147,7 +144,7 @@ const companysignup = () => {
               />
             </div>
             <div className="inputfield">
-              <label htmlFor="BusinessName">Business Name</label>
+              <label htmlFor="BusinessName">Business Name (*)</label>
               <input
                 type="text"
                 placeholder="Enter Business Name"
@@ -166,7 +163,64 @@ const companysignup = () => {
                 onChange={UserHandler}
               />
             </div>
+            <div className="inputfield">
+              <label htmlFor="cacno">CAC Reg Number</label>
+              <input
+                type="text"
+                onChange={UserHandler}
+                value={company.CACNO}
+                name="CACNO"
+                placeholder="Enter your cac registration number"
+              />
+            </div>
+            <div className="inputfield">
+              <label htmlFor="yrsio">Years in Operation (*)</label>
+              <select
+                name="yrsio"
+                value={company.yrsio}
+                onChange={UserHandler}
+                id=""
+              >
+                <option value=">1">Less Than 1</option>
+                <option value="1-5">1-5</option>
+                <option value="6-10">6-10</option>
+                <option value="10+">10+</option>
+              </select>
+            </div>
+            <div className="inputfield">
+              <label htmlFor="expertise">Project Expertise</label>
+              <input
+                type="text"
+                placeholder="Enter Your Expertise"
+                value={company.expertise}
+                name="expertise"
+                onChange={UserHandler}
+              />
+            </div>
+            <div className="confirmationfield">
+              <div className="confirmationfield_col">
+                <input type="checkbox" name="tandc" id="" />
+                <p>
+                  Website Terms & Conditions{" "}
+                  <Link target="_blank" to="/terms-and-conditions">READ HERE</Link> (*)
+                </p>
+              </div>
 
+              <div className="confirmationfield_col">
+                <input type="checkbox" name="canda" id="" />
+                <p>
+                  Contract & Agreement{" "}
+                  <Link target="_blank" to="/contract-and-agreement">READ HERE</Link> (*)
+                </p>
+              </div>
+              <div className="confirmationfield_col">
+                <input type="checkbox" name="training sponsorship" id="" />
+                <p>
+                  I am interested in Training Sponsorships{" "}
+                  <Link target="_blank" to="/training-and-sponsorship">READ HERE</Link>
+                </p>
+              </div>
+            </div>
             <div className="inputfield">
               <label htmlFor="password">Password</label>
               <input
@@ -188,67 +242,21 @@ const companysignup = () => {
               />
             </div>
             <div className="inputfield">
-              <label htmlFor="cacno">CAC Reg Number</label>
-              <input
-                type="text"
-                onChange={UserHandler}
-                value={company.CACNO}
-                name="CACNO"
-                placeholder="Enter your cac registration number"
-              />
-            </div>
-
-            <div className="inputfield">
-              <label htmlFor="yrsio">Years in Operation</label>
-              <input
-                type="text"
-                placeholder="Enter Number of years"
-                value={company.yrsio}
-                name="yrsio"
-                onChange={UserHandler}
-              />
-            </div>
-            <div className="inputfield">
-              <label htmlFor="expertise">Project Expertise</label>
-              <input
-                type="text"
-                placeholder="Enter Your Expertise"
-                value={company.expertise}
-                name="expertise"
-                onChange={UserHandler}
-              />
-            </div>
-            <div className="inputfield">
-              <label htmlFor="note">Note</label>
-              <input
-                type="text"
-                placeholder="Anything else you want to communicate to Instollar"
-                value={company.note}
-                name="note"
-                onChange={UserHandler}
-              />
-            </div>
-            <hr />
-            <div className="policy">
-              <p>
-                Yes, I understand and agree to the Instollar Terms of Service,
-                including the User Agreement and Privacy Policy.
-              </p>
-              <input type="checkbox" required name="" id="" />
-            </div>
-
-            <div className="inputfield">
               <input type="submit" className="sub" value="Register" />
             </div>
           </form>
-          <p className="log">
-            Already a member?{" "}
-            <Link className="log" to="/login">
-              Sign In Now
-            </Link>
-          </p>
+          <div className="talentparr">
+            <p className="log">
+              Already a member?{" "}
+              <Link className="logg" to="/login">
+                Sign In Now
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
+      <Footer />
+      <MainFooter />
     </div>
   );
 };
