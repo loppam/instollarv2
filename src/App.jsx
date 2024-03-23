@@ -5,7 +5,6 @@ import Login from "./pages/login";
 import TalentSignup from "./pages/Talentsignup";
 import Signupoption from "./pages/Signupoption";
 import UserAuthContext from "./context/UserAuthContext";
-import CompanyAuthcontext from "./context/companyAuthContext";
 import Companysignup from "./pages/companysignup";
 import About from "./pages/About";
 import TandC from "./pages/TandC";
@@ -23,6 +22,7 @@ import Profile from "./pages/Profile";
 // import Navbar from "./components/Navbar";
 import FreelancerOnboarding from "./pages/FreelancerOnboarding";
 import NavbarWrapper from "./components/NavbarWrapper";
+import CompanyAuthcontext from "./context/companyAuthContext";
 function App() {
   return (
     <>
