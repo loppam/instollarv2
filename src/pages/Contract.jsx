@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Contract = () => {
   return (
     <div className="contract">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="margin_content">
         <h3>SCOPE OF AGREEMENT</h3>
         <p>

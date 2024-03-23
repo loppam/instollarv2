@@ -6,7 +6,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 const Terms = () => {
   return (
     <div className="terms">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="content">
         <div className="flex">
           <div className="left_content">

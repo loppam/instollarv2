@@ -10,7 +10,7 @@ import "react-phone-input-2/lib/style.css";
 const contact = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="contact">
         <header>
           <h2>Contact Us</h2>

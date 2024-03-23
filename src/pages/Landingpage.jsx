@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const Landingpage = () => {
   return (
     <div className="landingpage">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="hero">
         <div className="content">

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Error = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar />  */}
       <div className="e404">
         <h1>404</h1>
       </div>

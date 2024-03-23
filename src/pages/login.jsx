@@ -2,12 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { auth } from "../components/firebase";
 import { Link } from "react-router-dom";
-import { BsLinkedin, BsFacebook } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Navbar from "../components/Navbar";
 import MainFooter from "../components/MainFooter";
 import Footer from "../components/footer";
 const login = () => {
+  const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const LoginHandler = async (e) => {
@@ -15,14 +16,15 @@ const login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        history("/profile");
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
   return (
     <div className="login">
-      <Navbar />
       <div className="login-flex">
         <h2>Login to Instollar</h2>
         <div className="header_img">
@@ -47,6 +49,27 @@ const login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          {/* <div className="log-inputfield">
+            <label>
+              <input
+                type="radio"
+                value="personal"
+                checked={accountType === "personal"}
+                onChange={() => setAccountType("personal")}
+              />{" "}
+              Personal
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="company"
+                checked={accountType === "company"}
+                onChange={() => setAccountType("company")}
+              />{" "}
+              Company
+            </label>
+          </div> */}
+
           <input type="submit" value="Sign In" />
         </form>
         <p className="log">

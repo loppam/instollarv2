@@ -6,7 +6,7 @@ import MainFooter from "../components/MainFooter";
 const About = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="about">
         <h2>Africa's Green Talent Marketplace</h2>
         <div className="who-we-are">

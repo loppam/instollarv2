@@ -6,9 +6,10 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth, db } from "../components/firebase";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
-const userContext = createContext();
+export const userContext = createContext();
 export const useAuth = () => {
   return useContext(userContext);
 };
@@ -16,37 +17,47 @@ export const useAuth = () => {
 const UserAuthContext = ({ children }) => {
   const [error, setError] = useState("");
   const [currentuser, setuser] = useState();
+  const history = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
+      // console.log(user);
+
       if (user) {
+        history("/profile");
         setuser(user);
-        console.log("you are logged in");
       } else {
-        alert("You are logged out");
+        // alert("You are logged out");
       }
     });
   }, [currentuser]);
   const SignUp = async (
     UserName,
     email,
-    address,
-    PhoneNumber,
     password,
+    Picture,
+    gender,
     FirstName,
     LastName,
+    address,
     CityofRes,
     LGAofRes,
+    stateOfResidence,
+    country,
+    PhoneNumber,
+    stateOfOrigin,
+    dateofbirth,
+    language,
+    ProofAddress,
     id,
+    education,
     YearsofExp,
     ResExp,
     CommercialExp,
     MiniGridExp,
-    link,
-    ProofAddress,
-    stateOfResidence,
-    language
+    solar,
+    CV,
+    link
   ) => {
     setError("");
     createUserWithEmailAndPassword(auth, email, password)
@@ -57,22 +68,30 @@ const UserAuthContext = ({ children }) => {
           const docRef = await setDoc(ref, {
             UserName,
             email,
-            address,
-            PhoneNumber,
             password,
+            Picture,
+            gender,
             FirstName,
             LastName,
+            address,
             CityofRes,
             LGAofRes,
+            stateOfResidence,
+            country,
+            PhoneNumber,
+            stateOfOrigin,
+            dateofbirth,
+            language,
+            ProofAddress,
             id,
+            education,
             YearsofExp,
             ResExp,
             CommercialExp,
             MiniGridExp,
+            solar,
+            CV,
             link,
-            ProofAddress,
-            stateOfResidence,
-            language,
             userID: `${result.user.uid}`,
           });
 

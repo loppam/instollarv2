@@ -55,7 +55,7 @@ const TopTalents = () => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="top_talent_head">
         <h2>Green Energy Talents</h2>
         <p>Browse for talents. Filter your search below</p>

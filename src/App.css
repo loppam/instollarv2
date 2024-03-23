@@ -981,10 +981,6 @@ nav {
 }
 
 /* --------- Signup --------- */
-.signupoption {
-  max-width: 1024px;
-  margin: 0 auto;
-}
 header.logo {
   margin: 1rem;
   max-width: 16rem;
@@ -997,7 +993,7 @@ header.logo img {
   flex-direction: column;
   align-items: center;
   gap: 4.3rem;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 .signupoption_content img {
   height: 100%;
@@ -1113,6 +1109,7 @@ header.logo img {
   flex-direction: column;
   gap: 0.3rem;
   width: 100%;
+  cursor: pointer;
 }
 .talentsignup h2 {
   color: #000;
@@ -1378,7 +1375,6 @@ header.logo2 img {
   .top_footer_flex,
   .footerr,
   .nav_content,
-  .signupoption,
   .margin_content {
     max-width: 90% !important;
     margin: 0 auto;
@@ -1423,7 +1419,7 @@ header.logo2 img {
   flex-direction: column;
   width: fit-content;
   max-width: 29rem;
-  width: 100%;
+  width: 90%;
   padding: 1rem;
   margin: 5rem auto;
   text-align: center;
@@ -2987,4 +2983,38 @@ a.card {
   font-size: 16px;
   font-weight: 400;
   margin: 0 0 10px;
+}
+.profilepic {
+  width: 18rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.profile_flex {
+  display: flex;
+  margin-top: 3cap;
+  justify-content: space-between;
+}
+.profile_flex_content a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: #2a3f61;
+  font-family: Manrope;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.profile_flex_content {
+  display: flex;
+  gap: 0.5rem;
+}
+.box {
+  border: 1px solid #2a3f61;
+  margin-top: 1rem;
+  padding: 2rem;
+  font-family: Manrope;
 }

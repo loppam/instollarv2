@@ -5,7 +5,7 @@ import Login from "./pages/login";
 import TalentSignup from "./pages/Talentsignup";
 import Signupoption from "./pages/Signupoption";
 import UserAuthContext from "./context/UserAuthContext";
-import CompanyAuthcontext from "./context/companyAuthcontext";
+import CompanyAuthcontext from "./context/companyAuthContext";
 import Companysignup from "./pages/companysignup";
 import About from "./pages/About";
 import TandC from "./pages/TandC";
@@ -18,9 +18,16 @@ import TopTalents from "./pages/TopTalents";
 import TopTalentsDetails from "./pages/TopTalentsDetails";
 import Onboarding from "./pages/Onboarding";
 import Contract from "./pages/Contract";
+import Profile from "./pages/Profile";
+// import CompanyProfile from "./pages/CompanyProfile";
+// import Navbar from "./components/Navbar";
+import FreelancerOnboarding from "./pages/FreelancerOnboarding";
+import NavbarWrapper from "./components/NavbarWrapper";
 function App() {
   return (
     <>
+      <NavbarWrapper />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Landingpage />} />
         <Route path="/login" element={<Login />} />
@@ -34,8 +41,30 @@ function App() {
         <Route path="/*" element={<Error />} />
         <Route path="/top-talents" element={<TopTalents />} />
         <Route path="/onboarding" element={<Onboarding />} />
+        <Route
+          path="/freelancer-onboarding"
+          element={<FreelancerOnboarding />}
+        />
         <Route path="/contract-and-agreement" element={<Contract />} />
+        <Route
+          path="/profile"
+          element={
+            <UserAuthContext>
+              <CompanyAuthcontext>
+                <Profile />
+              </CompanyAuthcontext>
+            </UserAuthContext>
+          }
+        />
 
+        {/* <Route
+          path="/companyprofile"
+          element={
+            <CompanyAuthcontext>
+              <CompanyProfile />
+            </CompanyAuthcontext>
+          }
+        /> */}
         <Route path="/user/:uuid" element={<TopTalentsDetails />} />
         <Route
           path="/talent-signup"

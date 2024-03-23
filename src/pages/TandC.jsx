@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 const TandC = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="tandc">
         <div className="tandc_hero">
           <div className="tandc_hero_content">

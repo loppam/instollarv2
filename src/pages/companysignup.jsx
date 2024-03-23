@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../context/companyAuthcontext";
+import { useCompanyAuth } from "../context/companyAuthContext";
 import { Link } from "react-router-dom";
-import { BsLinkedin, BsFacebook } from "react-icons/bs";
 import Navbar from "../components/Navbar";
 import MainFooter from "../components/MainFooter";
 import Footer from "../components/footer";
 
 const companysignup = () => {
-  const { error, SignUp, currentuser } = useAuth();
+  const { error, SignUp, currentuser } = useCompanyAuth();
   const [err, setError] = useState("");
   const [backError, setBackError] = useState("");
   const [company, setCompany] = useState({
@@ -18,12 +17,11 @@ const companysignup = () => {
     CACNO: "",
     yrsio: "",
     expertise: "",
-
     confirmPassword: "",
     password: "",
   });
   useEffect(() => {
-    console.log("I am in");
+    // console.log("I am in");
     if (error) {
       setInterval(() => {
         setBackError("");
@@ -52,18 +50,17 @@ const companysignup = () => {
       CACNO,
       yrsio,
       expertise,
-
     } = company;
     if (
       password == "" ||
       confirmPassword == "" ||
       email == "" ||
-      //   Offaddress == "" ||
+      Offaddress == "" ||
       PhoneNumber == "" ||
       BusinessName == "" ||
-      //   CACNO == "" ||
+      CACNO == "" ||
       yrsio == "" ||
-      expertise == "" 
+      expertise == ""
     ) {
       setInterval(() => {
         setError("");
@@ -88,7 +85,7 @@ const companysignup = () => {
         Offaddress,
         CACNO,
         yrsio,
-        expertise,
+        expertise
       );
       {
         currentuser &&
@@ -102,14 +99,13 @@ const companysignup = () => {
             CACNO: "",
             yrsio: "",
             expertise: "",
-
           });
       }
     }
   };
   return (
     <div className="companysignup">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="margin_content">
         <div className="companysignup_content">
           <h2>Register Your Business With Instollar</h2>
@@ -179,7 +175,7 @@ const companysignup = () => {
                 name="yrsio"
                 value={company.yrsio}
                 onChange={UserHandler}
-                id=""
+                id="yrsio"
               >
                 <option value=">1">Less Than 1</option>
                 <option value="1-5">1-5</option>
@@ -199,25 +195,33 @@ const companysignup = () => {
             </div>
             <div className="confirmationfield">
               <div className="confirmationfield_col">
-                <input type="checkbox" name="tandc" id="" />
+                <input type="checkbox" name="tandc" />
                 <p>
                   Website Terms & Conditions{" "}
-                  <Link target="_blank" to="/terms-and-conditions">READ HERE</Link> (*)
+                  <Link target="_blank" to="/terms-and-conditions">
+                    READ HERE
+                  </Link>{" "}
+                  (*)
                 </p>
               </div>
 
               <div className="confirmationfield_col">
-                <input type="checkbox" name="canda" id="" />
+                <input type="checkbox" name="canda" />
                 <p>
                   Contract & Agreement{" "}
-                  <Link target="_blank" to="/contract-and-agreement">READ HERE</Link> (*)
+                  <Link target="_blank" to="/contract-and-agreement">
+                    READ HERE
+                  </Link>{" "}
+                  (*)
                 </p>
               </div>
               <div className="confirmationfield_col">
-                <input type="checkbox" name="training sponsorship" id="" />
+                <input type="checkbox" name="training sponsorship" />
                 <p>
                   I am interested in Training Sponsorships{" "}
-                  <Link target="_blank" to="/training-and-sponsorship">READ HERE</Link>
+                  <Link target="_blank" to="/training-and-sponsorship">
+                    READ HERE
+                  </Link>
                 </p>
               </div>
             </div>

@@ -5,15 +5,14 @@ import Footer from "../components/footer";
 import { FaUser } from "react-icons/fa6";
 import { CiSearch, CiMail } from "react-icons/ci";
 import { Link } from "react-router-dom";
-
-const Onboarding = () => {
+const FreelancerOnboarding = () => {
   return (
     <div className="onboarding">
       {/* <Navbar /> */}
       <div className="margin_content">
         <div className="onboarding_flex">
           <div className="onboarding_left">
-            <h2>Hey Enteprise. Ready to hire the best green talent?</h2>
+            <h2>Hey Freelancer. Ready for your next green opportunity?</h2>
             <div className="onboarding_details">
               <div className="details_col">
                 <FaUser />
@@ -21,14 +20,14 @@ const Onboarding = () => {
               </div>
               <div className="details_col">
                 <CiSearch />
-                <p>Search for the perfect talent for your project</p>
+                <p>Wait to be connected with a client</p>
               </div>
               <div className="details_col">
                 <CiMail />
-                <p>Get your job done successfully</p>
+                <p>Get the job done & get paid</p>
               </div>
             </div>
-            <Link to="/company-signup" className="onboard">
+            <Link to="/talent-signup" className="onboard">
               Get Started
             </Link>
             <p className="onboard_txt">
@@ -47,4 +46,4 @@ const Onboarding = () => {
   );
 };
 
-export default Onboarding;
+export default FreelancerOnboarding;

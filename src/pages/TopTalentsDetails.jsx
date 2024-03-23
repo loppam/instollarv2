@@ -47,7 +47,7 @@ const TopTalentsDetails = () => {
       <div className="">
         {userDetails && (
           <div className="">
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="border">
               <div className="border_top">
                 <img src={userDetails.picture.large} alt="" />

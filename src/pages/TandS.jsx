@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const TandS = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="sponsorship">
         <div className="sponsorship_head">
           <div className="sponsorship_head_content">

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/UserAuthContext";
 import { Link } from "react-router-dom";
-import { BsLinkedin, BsFacebook } from "react-icons/bs";
 import Navbar from "../components/Navbar";
+import { storage } from "../components/firebase";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const Talentsignup = () => {
   const { error, SignUp, currentuser } = useAuth();
@@ -11,22 +12,30 @@ const Talentsignup = () => {
   const [user, setUser] = useState({
     UserName: "",
     email: "",
-    address: "",
-    PhoneNumber: "",
     password: "",
+    Picture: "",
+    gender: "",
     FirstName: "",
     LastName: "",
+    address: "",
     CityofRes: "",
     LGAofRes: "",
+    stateOfResidence: "",
+    country: "",
+    PhoneNumber: "",
+    stateOfOrigin: "",
+    dateofbirth: "",
+    language: "",
+    ProofAddress: "",
     id: "",
+    education: "",
     YearsofExp: "",
     ResExp: "",
     CommercialExp: "",
     MiniGridExp: "",
+    solar: "",
+    CV: "",
     link: "",
-    ProofAddress: "",
-    stateOfResidence: "",
-    language: "",
   });
   useEffect(() => {
     console.log("I am in");
@@ -46,19 +55,28 @@ const Talentsignup = () => {
       };
     });
   };
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
     const file = e.target.files[0];
-    const reader = new FileReader();
+    const storage = getStorage();
+    const storageRef = ref(storage, `/Document/${file.name}`);
 
-    reader.onloadend = () => {
+    try {
+      // Upload the file to Firebase Storage
+      await uploadBytes(storageRef, file);
+
+      // Get the download URL of the uploaded file
+      const fileURL = await getDownloadURL(storageRef);
+
+      // Update the component state with the file URL
       setUser((prev) => ({
         ...prev,
-        [e.target.name]: reader.result,
+        [e.target.name]: fileURL,
       }));
-    };
+    } catch (error) {
+      console.error("Error uploading file to Firebase Storage:", error);
 
-    if (file) {
-      reader.readAsDataURL(file);
+      // Handle the error, e.g., show a message to the user
+      setError("Error uploading file. Please try again later.");
     }
   };
   const SubmitHandler = async (e) => {
@@ -66,94 +84,128 @@ const Talentsignup = () => {
     const {
       UserName,
       email,
-      address,
-      PhoneNumber,
       password,
+      Picture,
+      gender,
       FirstName,
       LastName,
+      address,
       CityofRes,
       LGAofRes,
+      stateOfResidence,
+      country,
+      PhoneNumber,
+      stateOfOrigin,
+      dateofbirth,
+      language,
+      ProofAddress,
       id,
+      education,
       YearsofExp,
       ResExp,
       CommercialExp,
       MiniGridExp,
+      solar,
+      CV,
       link,
-      ProofAddress,
-      stateOfResidence,
-      language,
     } = user;
     if (
-      password == "" ||
-      confirmPassword == "" ||
+      UserName == "" ||
       email == "" ||
+      password == "" ||
+      Picture == "" ||
+      gender == "" ||
+      FirstName == "" ||
+      LastName == "" ||
       address == "" ||
+      CityofRes == "" ||
+      LGAofRes == "" ||
+      stateOfResidence == "" ||
+      country == "" ||
       PhoneNumber == "" ||
-      FullName == ""
+      stateOfOrigin == "" ||
+      dateofbirth == "" ||
+      language == "" ||
+      ProofAddress == "" ||
+      id == "" ||
+      education == "" ||
+      YearsofExp == "" ||
+      ResExp == "" ||
+      CommercialExp == "" ||
+      MiniGridExp == "" ||
+      solar == "" ||
+      CV == "" ||
+      link == ""
     ) {
       setInterval(() => {
         setError("");
-      }, 10000);
+      }, 100000);
       return setError("Please fill all field");
-    } else if (password !== confirmPassword) {
-      setInterval(() => {
-        setError("");
-      }, 10000);
-      return setError("Passwords don't match");
-    } else if (!password.length >= 6 || !confirmPassword.length >= 6) {
-      setInterval(() => {
-        setError("");
-      }, 10000);
-      return setError("Passwords should be more than 6");
     } else {
       SignUp(
         UserName,
         email,
-        address,
-        PhoneNumber,
         password,
+        Picture,
+        gender,
         FirstName,
         LastName,
+        address,
         CityofRes,
         LGAofRes,
+        stateOfResidence,
+        country,
+        PhoneNumber,
+        stateOfOrigin,
+        dateofbirth,
+        language,
+        ProofAddress,
         id,
+        education,
         YearsofExp,
         ResExp,
         CommercialExp,
         MiniGridExp,
-        link,
-        ProofAddress,
-        stateOfResidence,
-        language
+        solar,
+        CV,
+        link
       );
       {
         currentuser &&
           setUser({
             UserName: "",
             email: "",
-            address: "",
-            PhoneNumber: "",
             password: "",
+            Picture: "",
+            gender: "",
             FirstName: "",
             LastName: "",
+            address: "",
             CityofRes: "",
             LGAofRes: "",
+            stateOfResidence: "",
+            country: "",
+            PhoneNumber: "",
+            stateOfOrigin: "",
+            dateofbirth: "",
+            language: "",
+            ProofAddress: "",
             id: "",
+            education: "",
             YearsofExp: "",
             ResExp: "",
             CommercialExp: "",
             MiniGridExp: "",
+            solar: "",
+            CV: "",
             link: "",
-            ProofAddress: "",
-            stateOfResidence: "",
-            language: "",
           });
       }
     }
   };
   return (
     <div className="talentsignup">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="margin_content">
         <div className="talentsignup_content">
           <div className="header_img">
@@ -218,8 +270,13 @@ const Talentsignup = () => {
               </div>
               <div className="inputfield">
                 <label htmlFor="gender">Gender (*)</label>
-                <select name="gender" id="" onChange={UserHandler} required>
-                  <option value=""></option>
+                <select
+                  name="gender"
+                  value={user.gender}
+                  onChange={UserHandler}
+                  required
+                >
+                  <option disabled value=""></option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
@@ -250,7 +307,7 @@ const Talentsignup = () => {
                   type="text"
                   placeholder="Enter Address"
                   value={user.address}
-                  name="Address"
+                  name="address"
                   onChange={UserHandler}
                 />
               </div>
@@ -279,7 +336,8 @@ const Talentsignup = () => {
                 <select
                   name="stateOfResidence"
                   value={user.stateOfResidence}
-                  id=""
+                  onChange={UserHandler}
+                  id="stateOfResidence"
                 >
                   <option disabled value="">
                     Select your state?
@@ -325,7 +383,13 @@ const Talentsignup = () => {
               </div>
               <div className="inputfield">
                 <label htmlFor="Country">Country (*)</label>
-                <select name="country" id="country">
+                <select
+                  name="country"
+                  value={user.country}
+                  onChange={UserHandler}
+                  id="country"
+                >
+                  <option disabled value="">Niger</option>
                   <option value="Nigeria">Nigeria</option>
                 </select>
               </div>
@@ -340,8 +404,13 @@ const Talentsignup = () => {
                 />
               </div>
               <div className="inputfield">
-                <label htmlFor="StateofResidence">State of Residence (*)</label>
-                <select name="states" id="states">
+                <label htmlFor="StateofOrigin">State of Origin (*)</label>
+                <select
+                  name="stateOfOrigin"
+                  value={user.stateOfOrigin}
+                  onChange={UserHandler}
+                  id="stateOfOrigin"
+                >
                   <option disabled value="">
                     Select your state?
                   </option>
@@ -386,7 +455,13 @@ const Talentsignup = () => {
               </div>
               <div className="inputfield">
                 <label htmlFor="dateofbirth">Date of Birth (*)</label>
-                <input type="date" name="" id="" />
+                <input
+                  type="date"
+                  name="dateofbirth"
+                  id="dateofbirth"
+                  onChange={UserHandler}
+                  value={user.dateofbirth}
+                />
               </div>
               <div className="inputfield">
                 <label htmlFor="Language">Languages (*)</label>
@@ -396,27 +471,33 @@ const Talentsignup = () => {
                   value={user.language}
                   id="language"
                 >
-                  <option value="englsih">English</option>
-                  <option value="yoruba">Yoruba</option>
-                  <option value="igbo">Igbo</option>
+                  <option disabled value="">Select a language</option>
+                  <option value="English">English</option>
+                  <option value="Yoruba">Yoruba</option>
+                  <option value="Igbo">Igbo</option>
                 </select>
               </div>
+
               <div className="inputfield">
                 <label htmlFor="Address">Proof of Address (*)</label>
                 <input
+                  accept="image/*"
                   type="file"
-                  value={user.ProofAddress}
-                  name="address"
+                  name="ProofAddress"
+                  placeholder="Upload Picture"
                   onChange={handleFileChange}
+                  required
                 />
               </div>
               <div className="inputfield">
                 <label htmlFor="Id">Proof of ID (*)</label>
                 <input
+                  accept="image/*"
                   type="file"
-                  value={user.id}
-                  name="ID"
+                  name="id"
+                  placeholder="Upload Picture"
                   onChange={handleFileChange}
+                  required
                 />
               </div>
             </div>
@@ -425,33 +506,38 @@ const Talentsignup = () => {
               <h1>Qualifications</h1>
               <div className="inputfield">
                 <label htmlFor="education">Education (*)</label>
-                <select name="education" id="education" onChange={UserHandler} >
-                  <option value="?"></option>
-                  <option label="SSCE" value="string:SSCE">
+                <select
+                  name="education"
+                  value={user.education}
+                  id="education"
+                  onChange={UserHandler}
+                >
+                  <option disabled value="">Select Education</option>
+                  <option label="SSCE" value="SSCE">
                     SSCE
                   </option>
                   <option
                     label="Technical College/Institution"
-                    value="string:Technical College/Institution"
+                    value="Technical College/Institution"
                   >
                     Technical College/Institution
                   </option>
-                  <option label="ND/OND" value="string:ND/OND">
+                  <option label="ND/OND" value="ND/OND">
                     ND/OND
                   </option>
-                  <option label="HND/BSc" value="string:HND/BSc">
+                  <option label="HND/BSc" value="HND/BSc">
                     HND/BSc
                   </option>
-                  <option label="Other" value="string:Other">
+                  <option label="Other" value="Other">
                     Other
                   </option>
-                  <option label="BEng" value="string:BEng">
+                  <option label="BEng" value="BEng">
                     BEng
                   </option>
-                  <option label="MEng" value="string:MEng">
+                  <option label="MEng" value="MEng">
                     MEng
                   </option>
-                  <option label="MSc" value="string:MSc">
+                  <option label="MSc" value="MSc">
                     MSc
                   </option>
                 </select>
@@ -508,13 +594,31 @@ const Talentsignup = () => {
                 <label htmlFor="">
                   Solar Panel / Inverter Brands Expertise (*)
                 </label>
-                <select name="solar" id="solar" onChange={UserHandler}>
-                  <option value="Select an option">Select an option</option>
+                <select
+                  name="solar"
+                  id="solar"
+                  value={user.solar}
+                  onChange={UserHandler}
+                >
+                  <option disabled value="">Select an option</option>
+                  <option value="PV Modules - Canadian Solar">
+                    PV Modules - Canadian Solar
+                  </option>
+                  <option value="PV Modules - First Solar">
+                    PV Modules - First Solar
+                  </option>
                 </select>
               </div>
               <div className="inputfield">
                 <label htmlFor="">CV (*)</label>
-                <input type="file" onChange={handleFileChange} required />
+                <input
+                  accept="image/*"
+                  type="file"
+                  name="CV"
+                  placeholder="Upload Picture"
+                  onChange={handleFileChange}
+                  required
+                />
               </div>
               <div className="inputfield">
                 <label htmlFor="link to portfolio">

@@ -6,28 +6,31 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth, db } from "../components/firebase";
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
-const userContext = createContext();
-export const useAuth = () => {
-  return useContext(userContext);
+export const companyContext = createContext();
+export const useCompanyAuth = () => {
+  return useContext(companyContext);
 };
 
 const CompanyAuthcontext = ({ children }) => {
   const [error, setError] = useState("");
-  const [currentuser, setuser] = useState();
+  const [currentuser, setCurrentUser] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
+      // console.log(user);
       if (user) {
-        setuser(user);
-        console.log("you are logged in");
+        navigate("/profile"); 
+        setCurrentUser(user);
       } else {
-        alert("You are logged out");
+        // alert("You are logged out");
       }
     });
-  }, [currentuser]);
+  }, [currentuser]); 
+
   const SignUp = async (
     email,
     password,
@@ -52,38 +55,35 @@ const CompanyAuthcontext = ({ children }) => {
             CACNO,
             yrsio,
             expertise,
-
             userID: `${result.user.uid}`,
           });
 
-          alert("welcome New Company Created");
-          console.log("doc written with id", docRef.id);
+          alert("Welcome! New Company Created");
+          console.log("Document written with ID:", docRef.id);
         } catch (e) {
-          console.error("Error adding document", e);
+          console.error("Error adding document:", e);
         }
       })
       .catch((err) => {
         if (err.code === "auth/email-already-in-use") {
-          setInterval(() => {
-            setError("");
-          }, 5000);
-          setError("Email already in use try another");
+          setError("Email already in use. Please try another.");
         } else if (err.code === AuthErrorCodes.WEAK_PASSWORD) {
-          setInterval(() => {
-            setError("");
-          }, 5000);
-          setError("Password must be 6 characters");
+          setError("Password must be at least 6 characters.");
         } else {
           setError(err.message);
         }
       });
   };
+
   const value = {
     SignUp,
     error,
     currentuser,
   };
-  return <userContext.Provider value={value}>{children}</userContext.Provider>;
+
+  return (
+    <companyContext.Provider value={value}>{children}</companyContext.Provider>
+  );
 };
 
 export default CompanyAuthcontext;

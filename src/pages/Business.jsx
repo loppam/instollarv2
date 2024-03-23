@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Business = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="ibusiness">
         <div className="ibusiness_hero">
           <div className="ibusiness_flex">
