@@ -22,7 +22,7 @@ import Profile from "./pages/Profile";
 // import Navbar from "./components/Navbar";
 import FreelancerOnboarding from "./pages/FreelancerOnboarding";
 import NavbarWrapper from "./components/NavbarWrapper";
-import CompanyAuthcontext from "./context/CompanyAuthContext";
+import CompanyAuthcontext from "./context/companyAuthcontext";
 function App() {
   return (
     <>

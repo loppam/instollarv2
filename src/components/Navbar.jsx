@@ -5,7 +5,7 @@ import { Avatar } from "@mui/material";
 import { FaTimes } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useAuth } from "../context/UserAuthContext";
-import { useCompanyAuth } from "../context/CompanyAuthContext";
+import { useCompanyAuth } from "../context/companyAuthContext";
 import { getDoc, doc } from "firebase/firestore";
 import { db, auth } from "../components/firebase";
 import { useNavigate } from "react-router";
