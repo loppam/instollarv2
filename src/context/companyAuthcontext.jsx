@@ -23,13 +23,13 @@ const CompanyAuthcontext = ({ children }) => {
     onAuthStateChanged(auth, (user) => {
       // console.log(user);
       if (user) {
-        navigate("/profile"); 
+        navigate("/profile");
         setCurrentUser(user);
       } else {
         // alert("You are logged out");
       }
     });
-  }, [currentuser]); 
+  }, [currentuser]);
 
   const SignUp = async (
     email,
