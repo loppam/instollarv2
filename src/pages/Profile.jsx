@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { useAuth } from "../context/UserAuthContext";
-import { useCompanyAuth } from "../context/companyAuthContext";
+import CompanyAuthcontext, { useCompanyAuth } from "../context/CompanyAuthContext";
 import { db, auth } from "../components/firebase";
 import { useNavigate } from "react-router";
 import { getDoc, doc } from "firebase/firestore";
@@ -55,6 +55,7 @@ const Profile = () => {
   };
 
   return (
+
     <div className="profile_content">
       <div className="margin_content">
         <div className="profile_flex">

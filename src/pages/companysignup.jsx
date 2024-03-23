@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useCompanyAuth } from "../context/companyAuthContext";
+import { useCompanyAuth } from "../context/CompanyAuthContext";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import MainFooter from "../components/MainFooter";
