@@ -62,7 +62,7 @@ const Profile = () => {
           <h2>Your Info</h2>
           <div className="profile_flex_content">
             <Link>View Messages</Link>
-            <Link>Change Password</Link>
+            <Link to="/changepassword">Change Password</Link>
             <Link>Edit Profile</Link>
           </div>
         </div>
@@ -71,7 +71,10 @@ const Profile = () => {
           <div className="box">
             {personalUser && <p>Username: {userDetails.UserName}</p>}
             {companyUser && <p>Business Name: {userDetails.BusinessName}</p>}
+            {companyUser && <p>Phone Number: {userDetails.PhoneNumber}</p>}
             <p>Email: {userDetails.email}</p>
+
+            <img src={userDetails.Picture} alt="" className="userimg" />
           </div>
         ) : (
           <p>Loading user details...</p>

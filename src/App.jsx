@@ -18,6 +18,7 @@ import TopTalentsDetails from "./pages/TopTalentsDetails";
 import Onboarding from "./pages/Onboarding";
 import Contract from "./pages/Contract";
 import Profile from "./pages/Profile";
+import ChangePassword from "./pages/changePassword";
 // import CompanyProfile from "./pages/CompanyProfile";
 // import Navbar from "./components/Navbar";
 import FreelancerOnboarding from "./pages/FreelancerOnboarding";
@@ -56,15 +57,7 @@ function App() {
             </UserAuthContext>
           }
         />
-
-        {/* <Route
-          path="/companyprofile"
-          element={
-            <CompanyAuthcontext>
-              <CompanyProfile />
-            </CompanyAuthcontext>
-          }
-        /> */}
+        <Route path="/changepassword" element={<ChangePassword />} />
         <Route path="/user/:uuid" element={<TopTalentsDetails />} />
         <Route
           path="/talent-signup"

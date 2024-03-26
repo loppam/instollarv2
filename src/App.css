@@ -1468,7 +1468,7 @@ header.logo2 img {
   width: 100%;
 }
 .login_form input[type="submit"] {
-  width: 40%;
+  /* width: 50%; */
   padding: 1rem;
   background-color: #2a3f61;
   border: none;
@@ -3019,4 +3019,7 @@ a.card {
   font-family: Manrope;
 }
 
-
+.userimg {
+  max-width: 8rem;
+  width: 100%;
+}
